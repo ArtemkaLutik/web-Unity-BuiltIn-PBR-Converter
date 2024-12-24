@@ -25,11 +25,31 @@ function toggleSlider(sliderId, enabled) {
         updateSliderValue(sliderId);
     }
 }
-
+/*
 function toggleFieldVisibility(fieldId, visible) {
-    const field = document.getElementById(fieldId).closest('.mb-3');
-    field.style.display = visible ? 'block' : 'none';
+    //const field = document.getElementById(fieldId).closest('.mb-3');
+    //field.style.display = visible ? 'block' : 'none';
+    document.getElementById(fieldId).disabled = !visible;
+
 }
+*/
+function toggleFieldVisibility(fieldId, visible) {
+    const fieldWrapper = document.getElementById(fieldId).closest('.mb-3');
+    const input = document.getElementById(fieldId);
+
+    if (visible) {
+        fieldWrapper.classList.add('active'); // Enable with animation
+        fieldWrapper.classList.remove('disabled');
+        //input.disabled = false; // Enable the input
+    } else {
+        fieldWrapper.classList.remove('active');
+        fieldWrapper.classList.add('disabled'); // Grey out with animation
+        //input.disabled = true; // Disable the input
+    }
+}
+
+
+
 
 function updateSliderValue(sliderId) {
     const slider = document.getElementById(sliderId);
@@ -191,8 +211,26 @@ function createZip(images, outputSetName) {
     return new Promise((resolve) => {
         const zip = new JSZip();
         images.forEach(({ name, blob }) => {
-            zip.file(`${outputSetName}_${name}.png`, blob);
+            zip.file(`${name}.png`, blob);
         });
         zip.generateAsync({ type: 'blob' }).then(resolve);
     });
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const darkModeSwitch = document.getElementById('darkModeSwitch');
+    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+
+    // Apply dark mode on load
+    document.body.classList.toggle('dark-mode', isDarkMode);
+    darkModeSwitch.checked = isDarkMode;
+
+    // Toggle dark mode
+    darkModeSwitch.addEventListener('change', function () {
+        const isChecked = this.checked;
+        document.body.classList.toggle('dark-mode', isChecked);
+        localStorage.setItem('darkMode', isChecked);
+    });
+});
+
