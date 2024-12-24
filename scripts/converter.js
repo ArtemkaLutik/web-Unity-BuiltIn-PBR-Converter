@@ -220,17 +220,17 @@ function createZip(images, outputSetName) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const darkModeSwitch = document.getElementById('darkModeSwitch');
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
+    const isDarkMode = localStorage.getItem('theme') === 'dark';
 
-    // Apply dark mode on load
-    document.body.classList.toggle('dark-mode', isDarkMode);
+    // Apply saved theme on load
+    document.body.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
     darkModeSwitch.checked = isDarkMode;
 
-    // Toggle dark mode
+    // Toggle theme and save preference
     darkModeSwitch.addEventListener('change', function () {
-        const isChecked = this.checked;
-        document.body.classList.toggle('dark-mode', isChecked);
-        localStorage.setItem('darkMode', isChecked);
+        const theme = this.checked ? 'dark' : 'light';
+        document.body.setAttribute('data-bs-theme', theme);
+        localStorage.setItem('theme', theme);
     });
 });
 
