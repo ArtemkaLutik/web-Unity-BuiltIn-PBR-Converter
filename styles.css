@@ -1,25 +1,47 @@
+:root {
+    --color-dark-bg: #0F0F0F;
+    --color-light-text: #f5f5f5;
+    --color-container-bg: #1A1A1A;
+    --color-primary-bg: #CE7D63;
+    --color-primary-bg-hover: #CE7D63FF;
+    --color-primary-text: #0F0F0F;
+    --color-shadow-dark: rgba(0, 0, 0, 0.6);
+    --color-shadow-light: rgba(0, 0, 0, 0.1);
+    --color-output-bg: #fafafa;
+    --color-output-border: #ddd;
+    --color-slider-thumb: #CE7D63FF;
+}
 
-
+body {
+    font-family: 'Montserrat', sans-serif;
+}
 
 
 /* Dark mode */
-body[data-bs-theme="dark"] {
-    background: #0F0F0F; /* Dark background */
-    color: #f5f5f5; /* Light text */
 
+body[data-bs-theme="dark"] {
+    background: var(--color-dark-bg);
+    /* Dark background */
+    color: var(--color-light-text);
+    /* Light text */
 }
 
 body[data-bs-theme="dark"] main {
-    background: #1A1A1A; /* Dark container background */
-    color: #f5f5f5; /* Light text */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6); /* Adjust shadow for dark mode */
+    background: var(--color-container-bg);
+    /* Dark container background */
+    color: var(--color-light-text);
+    /* Light text */
+    box-shadow: 0 4px 6px var(--color-shadow-dark);
+    /* Adjust shadow for dark mode */
     border-radius: 12px;
 }
 
-button, input, .form-check-input, .form-range {
+button,
+input,
+.form-check-input,
+.form-range {
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 h1,
 h2 {
@@ -33,32 +55,37 @@ main {
     margin: 20px auto;
     background: white;
     border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--color-shadow-light);
 }
 
-
-
 .btn-primary {
-    background-color: #CE7D63 !important; /* Custom background color */
-    color: #0F0F0F !important; /* Custom text color */
-    border: none; /* Removes border */
-    transition: all 0.3s ease; /* Adds smooth transitions */
+    background-color: var(--color-primary-bg) !important;
+    /* Custom background color */
+    color: var(--color-primary-text) !important;
+    /* Custom text color */
+    border: none;
+    /* Removes border */
+    transition: all 0.3s ease;
+    /* Adds smooth transitions */
 }
 
 .btn-primary:hover {
-    background-color: #B65E54 !important; /* Slightly darker shade for hover */
-    color: #0F0F0F !important; /* Keeps the text color consistent */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow on hover */
-    transform: scale(1.1, 1.1); /* Increases size by 150% */
+    background-color: var(--color-primary-bg-hover) !important;
+    /* Slightly darker shade for hover */
+    color: var(--color-primary-text) !important;
+    /* Keeps the text color consistent */
+    box-shadow: 0 4px 6px var(--color-shadow-light);
+    /* Adds a subtle shadow on hover */
+    transform: scale(1.1, 1.1);
+    /* Increases size by 150% */
 }
-
 
 #output {
     margin-top: 2rem;
     padding: 1rem;
-    background: #fafafa;
+    background: var(--color-output-bg);
     border-radius: 8px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--color-output-border);
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -66,31 +93,37 @@ main {
     max-width: 100%;
     border-radius: 8px;
     margin-top: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px var(--color-shadow-light);
 }
+
 
 /* Default greyed-out state */
+
 .mb-3.disabled {
     opacity: 0.2;
-    pointer-events: none; /* Prevent interaction */
-    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out; /* Smooth transition */
+    pointer-events: none;
+    /* Prevent interaction */
+    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
+    /* Smooth transition */
 }
+
 
 /* Active (enabled) state */
+
 .mb-3.active {
     opacity: 1;
-    pointer-events: all; /* Allow interaction */
-    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out; /* Smooth transition */
+    pointer-events: all;
+    /* Allow interaction */
+    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
+    /* Smooth transition */
 }
-
-
-
-
-
 
 
 /* --------------Bootstrap color overrides-------------- */
+
+
 /* Remove default blue outlines and add custom styles */
+
 input:focus,
 button:focus,
 .form-check-input:focus,
@@ -98,37 +131,41 @@ button:focus,
     outline: none;
 }
 
+
 /* Sliders */
+
 .form-range {
-    background-color: #1a1a1a;
+    background-color: var(--color-container-bg);
 }
 
 .form-range::-webkit-slider-thumb {
-    background-color: #CE7D63FF;
+    background-color: var(--color-slider-thumb);
     border: none;
 }
 
 .form-range:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 2px #CE7D63FF;
+    box-shadow: 0 0 0 2px var(--color-slider-thumb);
 }
 
+
 /* Checkboxes */
+
 .form-check-input:checked {
-    background-color: #CE7D63FF;
-    border-color: #CE7D63FF;
+    background-color: var(--color-slider-thumb);
+    border-color: var(--color-slider-thumb);
 }
 
 .form-check-input:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #CE7D63FF;
+    box-shadow: 0 0 0 2px var(--color-slider-thumb);
 }
 
 input[type="text"]:focus,
 input[type="file"]:focus,
 input[type="number"]:focus {
     outline: none;
-    box-shadow: 0 0 0 2px #CE7D63FF; /* Custom focus shadow */
-    border-color: #CE7D63FF; /* Custom focus border */
+    box-shadow: 0 0 0 2px var(--color-slider-thumb);
+    /* Custom focus shadow */
+    border-color: var(--color-slider-thumb);
+    /* Custom focus border */
 }
-
-

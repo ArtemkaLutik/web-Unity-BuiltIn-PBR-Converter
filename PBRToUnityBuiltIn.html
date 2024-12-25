@@ -2,23 +2,26 @@
 <html lang="en">
 
 <head>
+    <!-- Meta and External Resources -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Page Metadata -->
     <title>PBR to Unity Standard Shader Converter</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 </head>
 
-
-
 <body data-bs-theme="dark">
-<div style="height: 20px;"></div>
+    <!-- Main Container -->
     <main>
-        <div style="height: 20px;"></div>
 
+        <!-- Conversion Form -->
         <form id="converter-form" class="container">
+
+            <!-- Input Textures Section -->
             <section class="mb-4">
                 <h2>Input Textures</h2>
                 <div class="mb-3">
@@ -42,8 +45,9 @@
                 </div>
             </section>
 
+            <!-- Missing Texture Options Section -->
             <section class="mb-4">
-                <h2>Missing Texture Options</h2>
+                <h3>Missing Texture Options</h3>
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="missing-roughness">
                     <label class="form-check-label" for="missing-roughness">Generate Roughness Map</label>
@@ -63,6 +67,7 @@
                 </div>
             </section>
 
+            <!-- Output Options Section -->
             <section class="mb-4">
                 <h2>Output Options</h2>
                 <div class="mb-3">
@@ -75,6 +80,7 @@
                 </div>
             </section>
 
+            <!-- Action Buttons -->
             <div class="d-flex align-items-center gap-3">
                 <button type="button" id="convert-button" class="btn btn-primary">Convert</button>
                 <a id="download-button" class="btn btn-primary d-none" href="#" download="ConvertedTextures.zip">Download Converted Textures</a>
@@ -82,6 +88,7 @@
         </form>
     </main>
 
+    <!-- External Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="scripts/converter.js"></script>
 </body>
