@@ -216,21 +216,3 @@ function createZip(images, outputSetName) {
         zip.generateAsync({ type: 'blob' }).then(resolve);
     });
 }
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const darkModeSwitch = document.getElementById('darkModeSwitch');
-    const isDarkMode = localStorage.getItem('theme') === 'dark';
-
-    // Apply saved theme on load
-    document.body.setAttribute('data-bs-theme', isDarkMode ? 'dark' : 'light');
-    darkModeSwitch.checked = isDarkMode;
-
-    // Toggle theme and save preference
-    darkModeSwitch.addEventListener('change', function () {
-        const theme = this.checked ? 'dark' : 'light';
-        document.body.setAttribute('data-bs-theme', theme);
-        localStorage.setItem('theme', theme);
-    });
-});
-
