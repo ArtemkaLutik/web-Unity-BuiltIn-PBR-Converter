@@ -11,7 +11,7 @@ A web-based tool that converts PBR texture maps (Albedo, Roughness, Metallic, an
 - Names texture by following template: T_YourSetName_Albedo.png
 
 ## Usage
-  Download repository and open PBRToUnityBuiltIn.html in your browser. Make sure .css and .js in same folder.
+  Download repository and open PBRToUnityBuiltIn.html in your browser. Make sure "style.css" and "scripts" in same folder.
 
 ## Contributing
   If you'd like to contribute to this project, feel free to fork the repository, make changes, and submit a pull request.
