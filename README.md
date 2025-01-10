@@ -17,4 +17,4 @@ A web-based tool that converts PBR texture maps (Albedo, Roughness, Metallic, an
   If you'd like to contribute to this project, feel free to fork the repository, make changes, and submit a pull request.
 
 ## License
-  This project is licensed under the MIT License - see the LICENSE file for details.
+  This project is licensed under the MIT License
